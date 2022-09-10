@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +19,11 @@ use App\Models\User;
 
 Route::get('/', function () {
     // $users = User::get()->toArray();
-    return view('welcome');
+    // return view('welcome');
+    echo "Hello";
 });
+
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::post('/login', [LoginController::class, 'checkLogin'])->name('check_login');

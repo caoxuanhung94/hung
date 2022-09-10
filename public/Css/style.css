@@ -8,6 +8,11 @@
 #body{
     background:red;
     height: 700px;
+    color:white;
+}
+#body table{
+    color:white;
+    background:black;
 }
 
 #footer{
