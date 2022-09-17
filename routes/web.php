@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CookieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,5 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::post('/login', [LoginController::class, 'checkLogin'])->name('check_login');
+Route::get('/cookie', [CookieController::class, 'index']);
+Route::get('/get-cookie', [CookieController::class, 'getCookie']);
